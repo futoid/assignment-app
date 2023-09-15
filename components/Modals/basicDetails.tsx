@@ -1,27 +1,64 @@
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 import useBasicDetails from "../../hooks/useBasicDetails";
 import {AiOutlineClose} from 'react-icons/ai'
+import Input from "../reuseable-components/Input";
+import useSocialDetails from "../../hooks/useSocialDetails";
 
 const BasicDetails = () => {
-    const basicDetail = useBasicDetails();
+    const basicDetails = useBasicDetails();
+    const socialDetails = useSocialDetails();
 
-    const onToggle = useCallback(()=> {
-        basicDetail.onClose();
-    }, [basicDetail])
+    const [currentName , setCuurentName] = useState("");
+    const [currentMail , setCurrentMail] = useState("");
+    const [currentPhone , setCurrentPhone] = useState("");
 
-    if(basicDetail.isOpen === false){
+    const [name , setName] = useState("");
+    const [mail, setMail] = useState("");
+    const [phone, setPhone] = useState("");
+
+    const onClose = useCallback(()=> {
+        basicDetails.onClose();
+    }, [basicDetails])
+
+    const onToggle = useCallback(() => {
+        basicDetails.onClose();
+        socialDetails.onOpen();
+    }, [basicDetails, socialDetails])
+
+    if(basicDetails.isOpen === false){
         return null
     }
 
     return ( 
         <div className="flex fixed w-full h-full bg-black bg-opacity-50 items-center justify-center">
-            <div className="w-[30rem] h-96 bg-white rounded-2xl">
-                <div className=" flex flex-col">
+            <div className="w-[35rem] h-fit bg-white rounded-2xl pb-5">
+                <div className=" flex flex-col border-b-[1px]">
                     <div className=" flex flex-row my-4 mx-4 font-montserrat text-lg font-semibold justify-start items-center">
                         <div>Add New Profile</div>
-                        <div className=" ml-[17rem] hover:cursor-pointer" onClick={onToggle}>
+                        <div className=" ml-[17rem] hover:cursor-pointer" onClick={onClose}>
                             <AiOutlineClose />
                         </div>
+                    </div>
+                </div>
+                <div className=" flex flex-row gap-24 justify-center items-center p-2  font-semibold text-base">
+                    <div className=" border-b-4 px-20 pb-2 border-[#3F84F8] hover:cursor-pointer">
+                        Basic
+                    </div>
+                    <div className=" border-b-4 px-20 pb-2 border-[#D9D9D9] hover:cursor-pointer" onClick={onToggle} >
+                        Social
+                    </div>
+                </div>
+                <div className=" flex flex-col px-6">
+                    <Input header="Enter Name*" placeholder="Eg. Aliek Mandal" onChange={(event) => {setName(event.target.value)}}/>
+                    <Input header="Enter Email*" placeholder="Eg. aliek@duck.com" onChange={(event) => {setMail(event.target.value)}}/>
+                    <Input header="Enter Phone*" placeholder="Eg. 999999999" onChange={(event) => {setPhone(event.target.value)}}/>
+                    <div className="flex justify-end">
+                        <button 
+                            className=" font-montserrat font-normal text-white bg-[#3E84F8] py-2 px-4 rounded-lg"
+                            onClick={onToggle}
+                        >
+                            Next
+                        </button>
                     </div>
                 </div>
             </div>

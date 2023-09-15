@@ -3,6 +3,7 @@ import BarSection from "../Charts/BarSection";
 import DashboardHeader from "./HeaderDashboard";
 import ProductDataCard from "./ProductDataCard";
 import TopCardSection from "./TopCardSection";
+import UserCard from "./UserCard";
 
 const Dashboard = () => {
     return (
@@ -13,8 +14,16 @@ const Dashboard = () => {
             <div>
                 <DashboardHeader />
                 <TopCardSection />
-                <BarSection/>
-                <ProductDataCard/>
+                <BarSection />
+                <div className=" flex flex-row w-full grid-cols-2">
+                    <div className=" col-span-1">
+                        <ProductDataCard />
+                    </div>
+                    <div className=" col-span-1">
+                        <UserCard />
+                    </div>
+
+                </div>
             </div>
         </div>
     );

@@ -3,8 +3,8 @@ interface InputProps {
     placeholder : string;
     value ?: string;
     type ?: string;
-    width : number,
     onChange ?: (event : React.ChangeEvent<HTMLInputElement>) => void;
+    optional ?: boolean;
 }
 
 const Input : React.FC<InputProps> = (
@@ -12,13 +12,13 @@ const Input : React.FC<InputProps> = (
         placeholder , 
         value, 
         type, 
-        width,
-        onChange
+        onChange,
+        optional
     }
     ) => {
     return ( 
         <div className=" py-3">
-        <p className=" text-black text-base font-normal">{header}</p>
+        <p className=" text-black text-base font-normal">{header} { optional ? <span className=" text-[#999CA0]"> (Optional)</span> : " "}</p>
         <input
             placeholder= {placeholder}
             value= {value}

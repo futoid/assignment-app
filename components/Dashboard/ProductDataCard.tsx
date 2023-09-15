@@ -3,7 +3,7 @@ import { FaCircle } from "react-icons/fa";
 
 const ProductDataCard = () => {
     return (
-        <div className=" my-10 mx-4 w-[36rem]">
+        <div className=" my-10 mr-2 w-[35rem]">
             <div className=" bg-white border-[3px] border-[#E0E0E0] py-6 px-8 rounded-3xl shadow-lg">
                 <div className=" flex flex-row gap-[16rem] justify-center items-center">
                     <h1 className=" font-montserrat font-bold text-lg mb-5">Top Products</h1>
