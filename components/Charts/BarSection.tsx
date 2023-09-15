@@ -1,5 +1,22 @@
 import { Bar } from "react-chartjs-2";
+import {
+    Chart as ChartJS,
+    CategoryScale,
+    LinearScale,
+    BarElement,
+    Title,
+    Tooltip,
+    Legend,
+  } from 'chart.js';
 const BarSection = () => {
+    ChartJS.register(
+        CategoryScale,
+        LinearScale,
+        BarElement,
+        Title,
+        Tooltip,
+        Legend
+      );
     const data = {
         labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
         datasets: [{

@@ -1,6 +1,7 @@
-import BarSection from "./BarSection";
-import DashboardHeader from "./HeaderDashboard";
 import SideBar from "./SideBar";
+import BarSection from "../Charts/BarSection";
+import DashboardHeader from "./HeaderDashboard";
+import ProductDataCard from "./ProductDataCard";
 import TopCardSection from "./TopCardSection";
 
 const Dashboard = () => {
@@ -13,6 +14,7 @@ const Dashboard = () => {
                 <DashboardHeader />
                 <TopCardSection />
                 <BarSection/>
+                <ProductDataCard/>
             </div>
         </div>
     );
