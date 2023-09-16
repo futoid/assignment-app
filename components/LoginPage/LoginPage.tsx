@@ -26,6 +26,11 @@ const LoginPage = () => {
                         <BiLogoDiscord size={45} color='white' />
                     </div>
                 </div>
+                <div className="lg:hidden bg-gradient-to-r from-[#4285F4] to-[#286DE0] h-16 rounded-b-xl flex items-center">
+                    <h1 className=" font-poppins text-white font-bold text-lg ml-8">
+                        Logo
+                    </h1>
+                </div>
                 <div className="flex items-center justify-center p-5">
                     <div>
                         <div className=" ml-6 mt-5">

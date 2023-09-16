@@ -7,7 +7,7 @@ const DashboardHeader = () => {
     const { data: userData } = useSession();
 
     return (
-        <div className=" flex mt-6 justify-between items-center">
+        <div className=" flex pt-6 justify-between items-center">
             <div>
                 <h1 className=" text-black text-2xl font-bold">
                     Dashboard
