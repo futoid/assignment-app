@@ -34,21 +34,21 @@ const User = () => {
                 <div className=' mt-10'>
                     <div className=" flex gap-10">
                         <div className=' flex flex-row basis-1/2 justify-start items-center gap-2'>
-                            <div className='flex rounded-full bg-[#E9F9EB] m-1 p-2 justify-center'>
+                            <div className='flex rounded-full bg-[#E9F9EB] m-1 p-1 lg:m-1 lg:p-2 justify-center'>
                                 <PiWhatsappLogoLight size={25} color="#3CC952" />
                             </div>
 
-                            <div className=' font-figtree text-base font-normal underline'>
+                            <div className=' font-figtree text-sm lg:text-base font-normal underline'>
                                 {user.phone}
                             </div>
 
                         </div>
                         <div className=' flex flex-row basis-1/2 justify-start items-center gap-2'>
-                            <div className='flex rounded-full bg-[#FFE9EC] m-1 p-2 justify-center'>
+                            <div className='flex rounded-full bg-[#FFE9EC] m-1 p-1 lg:m-1 lg:p-2 justify-center'>
                                 <AiOutlineInstagram size={25} color="#FF4E64" />
                             </div>
 
-                            <div className=' font-figtree text-base font-normal underline underline-offset-2'>
+                            <div className=' font-figtree text-sm lg:text-base  font-normal underline underline-offset-2'>
                                 {user.instagram}
                             </div>
 
@@ -56,21 +56,21 @@ const User = () => {
                     </div>
                     <div className=" flex gap-10 mt-4">
                         <div className=' flex flex-row basis-1/2 justify-start items-center gap-2'>
-                            <div className='flex rounded-full bg-[#E9F9EB] m-1 p-2 justify-center'>
+                            <div className='flex rounded-full bg-[#E9F9EB] m-1 p-1 lg:m-1 lg:p-2 justify-center'>
                                 <CiMail size={25} color="#5C33CF" />
                             </div>
 
-                            <div className=' font-figtree text-base font-normal underline'>
+                            <div className=' font-figtree text-sm lg:text-base  font-normal underline'>
                                 {user.email}
                             </div>
 
                         </div>
                         <div className=' flex flex-row basis-1/2 justify-start items-center gap-2'>
-                            <div className='flex rounded-full bg-[#FFE9E9] m-1 p-2 justify-center'>
+                            <div className='flex rounded-full bg-[#FFE9E9] m-1 p-1 lg:m-1 lg:p-2 justify-center'>
                                 <AiOutlineYoutube size={25} color="#FF0000" />
                             </div>
 
-                            <div className=' font-figtree text-base font-normal underline underline-offset-2'>
+                            <div className=' font-figtree text-sm lg:text-base font-normal underline underline-offset-2'>
                                 {user.youtube}
                             </div>
 
