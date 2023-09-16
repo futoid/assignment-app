@@ -8,6 +8,7 @@ import {
     Tooltip,
     Legend,
 } from 'chart.js';
+import { FaCircle } from "react-icons/fa";
 const BarSection = () => {
     ChartJS.register(
         CategoryScale,
@@ -21,14 +22,14 @@ const BarSection = () => {
         labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
         datasets: [{
             label: 'User',
-            data: [12, 19, 3, 5],
+            data: [30, 24, 27, 21],
             backgroundColor: [
                 '#98D89E',
             ],
         },
         {
             label: 'Guest',
-            data: [2, 15, 7, 12],
+            data: [15, 20, 25, 40],
             backgroundColor: [
                 '#EE8484',
             ],
@@ -39,8 +40,18 @@ const BarSection = () => {
     return (
         <div className="mt-8">
             <div className=" bg-white border-[3px] border-[#E0E0E0] rounded-3xl shadow-lg h-96 w-[72rem] p-10 pb-20">
-                <div className=" flex flex-row">
+                <div className=" flex flex-row items-center gap-[45rem]">
                     <h1 className=" font-montserrat font-bold text-lg">Activities</h1>
+                    <div className=" flex flex-row gap-10" >  
+                        <div className=" flex flex-row items-center gap-3"> 
+                            <FaCircle size={15} color="#E9A0A0"/>
+                            <h1 className="font-lato text-sm">Guest</h1>
+                        </div>
+                        <div className=" flex flex-row items-center gap-3"> 
+                            <FaCircle size={15} color="#9BDD7C"/>
+                            <h1 className="font-lato text-sm">User</h1>
+                        </div>
+                    </div>
                 </div>
                 <h1 className=" font-montserrat font-normal text-sm text-[#858585] mb-6">May - June 2021</h1>
                 <Bar
@@ -56,7 +67,6 @@ const BarSection = () => {
                             },
                             y: {
                                 beginAtZero: true,
-                                max: 50,
                                 ticks: {
                                     stepSize: 10,
                                 },
