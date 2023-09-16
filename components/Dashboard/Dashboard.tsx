@@ -7,15 +7,15 @@ import UserCard from "./UserCard";
 
 const Dashboard = () => {
     return (
-            <div className="lg:flex gap-8">
+            <div className="lg:flex gap-8 h-full">
                 <div className=" fixed">
                     <SideBar />
                 </div>
-                <div className=" px-10 lg:ml-[20rem] w-screen">
+                <div className=" px-4 lg:px-10 lg:ml-[20rem] w-screen">
                     <DashboardHeader />
                     <TopCardSection />
                     <BarSection />
-                    <div className="lg:grid lg:grid-cols-2 gap-6 mb-8">
+                    <div className="lg:grid lg:grid-cols-2 gap-6">
                         <div className=" lg:col-span-1" >
                             <ProductDataCard />
                         </div>

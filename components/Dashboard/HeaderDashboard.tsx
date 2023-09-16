@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { useSession } from 'next-auth/react';
+import { signOut, useSession } from 'next-auth/react';
 import { BiBell, BiLogOutCircle } from 'react-icons/bi';
 import SearchBar from '../reuseable-components/search';
 
@@ -30,8 +30,8 @@ const DashboardHeader = () => {
                         loading='lazy'
                     />
                 </div>
-                <div >
-                    <BiLogOutCircle size={30} />
+                <div onClick={() =>signOut()} className=' hover:cursor-pointer'>
+                    <BiLogOutCircle size={30}/>
                 </div>
 
             </div>

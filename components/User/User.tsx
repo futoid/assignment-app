@@ -24,7 +24,7 @@ const User = () => {
     }, [user]);
 
     return (
-        <div className=" my-10 ml-2 w-[35rem] px-2">
+        <div className=" my-10 px-2">
             <div className=" bg-white border-[3px] border-[#E0E0E0] pt-6 pb-20 px-10 rounded-3xl shadow-lg">
                 <div className=' flex justify-end hover:cursor-pointer gap-6 items-center'>
                     <AiOutlineClose onClick={onClose} />
@@ -32,7 +32,7 @@ const User = () => {
                 </div>
                 <h1 className=" font-figtree font-semibold text-2xl">{user.name}</h1>
                 <div className=' mt-10'>
-                    <div className=" flex gap-10 my-3">
+                    <div className=" flex gap-10">
                         <div className=' flex flex-row basis-1/2 justify-start items-center gap-2'>
                             <div className='flex rounded-full bg-[#E9F9EB] m-1 p-2 justify-center'>
                                 <PiWhatsappLogoLight size={25} color="#3CC952" />
@@ -54,7 +54,7 @@ const User = () => {
 
                         </div>
                     </div>
-                    <div className=" flex gap-10 my-4">
+                    <div className=" flex gap-10 mt-4">
                         <div className=' flex flex-row basis-1/2 justify-start items-center gap-2'>
                             <div className='flex rounded-full bg-[#E9F9EB] m-1 p-2 justify-center'>
                                 <CiMail size={25} color="#5C33CF" />

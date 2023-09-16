@@ -33,18 +33,18 @@ const LoginPage = () => {
                             <p className="text-black text-base font-normal font-lato pt-3">Sign in to your account</p>
                         </div>
 
-                        <div className=" flex flex-row gap-6">
-                            <div className=" flex flex-row gap-2 p-2 mt-8 ml-4 bg-white rounded-xl items-center justify-center hover:cursor-pointer" onClick={() => signIn('google')}>
+                        <div className=" flex flex-row gap-1">
+                            <div className=" flex flex-row gap-2 p-2 mt-8 lg:ml-4 bg-white rounded-xl items-center justify-center hover:cursor-pointer" onClick={() => signIn('google')}>
                                 <FcGoogle size={30} />
-                                <p className=" text-sm flex text-[#858585] font-montserrat justify-center items-center"> Sign in with Google</p>
+                                <p className=" text-[.6rem] lg:text-sm flex text-[#858585] font-montserrat justify-center items-center"> Sign in with Google</p>
                             </div>
                             <div className=" flex flex-row gap-4 p-2 mt-8 ml-4 bg-white rounded-xl">
                                 <AiFillApple size={30} color="#999999" />
-                                <p className=" text-sm flex text-[#858585] font-montserrat justify-center items-center"> Sign in with Apple</p>
+                                <p className="text-[.6rem] lg:text-sm flex text-[#858585] font-montserrat justify-center items-center"> Sign in with Apple</p>
                             </div>
                         </div>
 
-                        <div className=' flex flex-col gap-1 px-8 py-10 rounded-xl mt-4 ml-4 bg-white font-lato'>
+                        <div className=' flex flex-col gap-1 px-8 py-10 rounded-xl mt-4 lg:ml-4 bg-white font-lato'>
                             <Input
                                 header="Email address"
                                 placeholder="Enter your mail"
