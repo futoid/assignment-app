@@ -41,7 +41,7 @@ const SideBar = () => {
 
                 <div className=" flex flex-col gap-8 mt-16">
                     {sideBarItems.map((item) => (
-                        <SideBarElement label={item.label} icon={item.icon} bold={item?.bold}/>
+                        <SideBarElement label={item.label} icon={item.icon} bold={item?.bold} key={item.label}/>
                     ))}
                 </div>
 
