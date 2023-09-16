@@ -32,7 +32,7 @@ const LoginPage = () => {
                         <p className="text-black text-base font-normal font-lato pt-3">Sign in to your account</p>
 
                         <div className=" flex flex-row gap-6">
-                            <div className=" flex flex-row gap-4 p-2 mt-8 ml-4 bg-white rounded-xl hover:cursor-pointer" onClick={() => signIn('google')}>
+                            <div className=" flex flex-row gap-4 p-2 mt-8 ml-4 bg-white rounded-xl hover:cursor-pointer" onClick={() => signIn()}>
                                 <FcGoogle size={30} />
                                 <p className=" flex text-[#858585] font-montserrat justify-center items-center"> Sign in with Google</p>
                             </div>
