@@ -1,11 +1,13 @@
 import { useCallback } from "react";
-
 import { AiOutlinePlus } from "react-icons/ai";
+
 import useBasicDetails from "../../hooks/useBasicDetails";
+import useUser from "../../hooks/useUser";
 
 const NoUser = () => {
 
     const basicDetails = useBasicDetails();
+    const user = useUser();
 
     const addUser = useCallback(() => {
         basicDetails.onOpen();

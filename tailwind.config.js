@@ -11,7 +11,8 @@ module.exports = {
       fontFamily: {
         'montserrat' : ['var(--font-montserrat)'],
         'lato' : ['var(--font-lato)'],
-        'poppins' : ['var(--font-poppins)']
+        'poppins' : ['var(--font-poppins)'],
+        'figtree' : ['var(--font-figtree)']
       },
     },
   },

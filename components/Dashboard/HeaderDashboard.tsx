@@ -1,18 +1,22 @@
 import Image from 'next/image'
 import { useSession } from 'next-auth/react';
 import { BiBell } from 'react-icons/bi';
+import SearchBar from '../reuseable-components/search';
 
 const DashboardHeader = () => {
     const { data: userData } = useSession();
     return (
-        <div className=" flex flex-row mt-14 items-center">
+        <div className=" flex flex-row mt-14  gap-[43rem] items-center">
             <div>
                 <h1 className=" text-black text-2xl font-bold">
                     Dashboard
                 </h1>
             </div>
 
-            <div className=" flex flex-row w-40 ml-[50rem] gap-8 items-center">
+            <div className=" flex flex-row gap-8 items-center">
+                <div>
+                    <SearchBar/>
+                </div>
                 <div className="">
                     <BiBell size={30} />
                 </div>

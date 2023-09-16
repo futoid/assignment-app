@@ -1,4 +1,4 @@
-import {Montserrat, Lato, Poppins} from 'next/font/google';
+import {Montserrat, Lato, Poppins, Figtree} from 'next/font/google';
 
 export const montserrat = Montserrat({
     subsets : ['latin'],
@@ -16,6 +16,11 @@ export const poppins = Poppins({
     variable : '--font-poppins',
     weight : ['400', '700']
 });
+
+export const figtree = Figtree({
+    subsets : ['latin'],
+    variable : '--font-figtree',
+})
 
 
 

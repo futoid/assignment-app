@@ -4,8 +4,8 @@ import {LuUsers2} from 'react-icons/lu'
 const TopCards = () => {
 
     return (
-        <div className=" flex lg:flex-row gap-5">
-            <div className=" flex flex-col py-4 px-5 border-[3px] border-[#E0E0E0] bg-white rounded-3xl shadow-lg">
+        <div className="lg:flex lg:flex-row sm:fles-col gap-5">
+            <div className=" flex flex-col py-4 px-5 border-[3px] border-[#E0E0E0] bg-white rounded-3xl shadow-lg sm:w-fit">
                 <div className="p-2 w-fit bg-[#7FCD93] rounded-full">
                     <BsCashStack size={22} color="white" />
                 </div>

@@ -3,14 +3,12 @@ import useBasicDetails from "../../hooks/useBasicDetails";
 import {AiOutlineClose} from 'react-icons/ai'
 import Input from "../reuseable-components/Input";
 import useSocialDetails from "../../hooks/useSocialDetails";
+import useUser from "../../hooks/useUser";
 
 const BasicDetails = () => {
     const basicDetails = useBasicDetails();
     const socialDetails = useSocialDetails();
-
-    const [currentName , setCuurentName] = useState("");
-    const [currentMail , setCurrentMail] = useState("");
-    const [currentPhone , setCurrentPhone] = useState("");
+    const user = useUser();
 
     const [name , setName] = useState("");
     const [mail, setMail] = useState("");
@@ -18,12 +16,20 @@ const BasicDetails = () => {
 
     const onClose = useCallback(()=> {
         basicDetails.onClose();
-    }, [basicDetails])
+        setName('');
+        setMail('');
+        setPhone('');
+    }, [basicDetails,setMail,setName,setPhone]);
 
     const onToggle = useCallback(() => {
+
+        user.updateName(name as string);
+        user.updateEmail(mail as string);
+        user.updatePhone(phone as string);        
+
         basicDetails.onClose();
         socialDetails.onOpen();
-    }, [basicDetails, socialDetails])
+    }, [basicDetails, socialDetails,user,name,mail,phone])
 
     if(basicDetails.isOpen === false){
         return null
@@ -33,7 +39,7 @@ const BasicDetails = () => {
         <div className="flex fixed w-full h-full bg-black bg-opacity-50 items-center justify-center">
             <div className="w-[35rem] h-fit bg-white rounded-2xl pb-5">
                 <div className=" flex flex-col border-b-[1px]">
-                    <div className=" flex flex-row my-4 mx-4 font-montserrat text-lg font-semibold justify-start items-center">
+                    <div className=" flex flex-row my-4 mx-4 gap-20 font-montserrat text-lg font-semibold justify-start items-center">
                         <div>Add New Profile</div>
                         <div className=" ml-[17rem] hover:cursor-pointer" onClick={onClose}>
                             <AiOutlineClose />
@@ -49,9 +55,9 @@ const BasicDetails = () => {
                     </div>
                 </div>
                 <div className=" flex flex-col px-6">
-                    <Input header="Enter Name*" placeholder="Eg. Aliek Mandal" onChange={(event) => {setName(event.target.value)}}/>
-                    <Input header="Enter Email*" placeholder="Eg. aliek@duck.com" onChange={(event) => {setMail(event.target.value)}}/>
-                    <Input header="Enter Phone*" placeholder="Eg. 999999999" onChange={(event) => {setPhone(event.target.value)}}/>
+                    <Input header="Enter Name*" placeholder="Eg. Aliek Mandal" onChange={(event) => {setName(event.target.value)}} value={name}/>
+                    <Input header="Enter Email*" placeholder="Eg. aliek@duck.com" onChange={(event) => {setMail(event.target.value)}} value={mail}/>
+                    <Input header="Enter Phone*" placeholder="Eg. 999999999" onChange={(event) => {setPhone(event.target.value)}} value={phone}/>
                     <div className="flex justify-end">
                         <button 
                             className=" font-montserrat font-normal text-white bg-[#3E84F8] py-2 px-4 rounded-lg"

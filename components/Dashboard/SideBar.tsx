@@ -34,7 +34,7 @@ const SideBar = () => {
 
     return ( 
         <div>
-            <div className=" bg-gradient-to-r from-[#4285F4] to-[#3C83F9] h-[64rem] m-8 rounded-xl pl-10">
+            <div className="bg-gradient-to-r from-[#4285F4] to-[#3C83F9] h-[64rem] m-8 rounded-xl px-7">
                 <div className=" text-4xl font-bold text-white font-montserrat pt-10">
                     Board.
                 </div>
