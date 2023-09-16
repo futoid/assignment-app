@@ -33,8 +33,8 @@ const SideBar = () => {
     ]
 
     return ( 
-        <div>
-            <div className="bg-gradient-to-r from-[#4285F4] to-[#3C83F9] h-[64rem] m-8 rounded-xl px-7">
+        <div className=" hidden lg:flex lg:h-[42rem] my-8 mx-6 -z-10">
+            <div className="bg-gradient-to-r from-[#4285F4] to-[#3C83F9] rounded-xl px-16">
                 <div className=" text-4xl font-bold text-white font-montserrat pt-10">
                     Board.
                 </div>
@@ -46,10 +46,9 @@ const SideBar = () => {
                 </div>
 
                 {/* <Button secondary label="Log Out" onClick={signOut}/> */}
-                <div className=" mt-[30rem] flex flex-col gap-4">
+                <div className="flex flex-col gap-4 mt-40">
                     <div className=" font-montserrat text-sm text-white">Help</div>
                     <div className=" font-montserrat text-sm text-white">Contect Us</div>
-                    <div className=" font-montserrat text-sm text-white hover:cursor-pointer" onClick={() => signOut()}>Log Out</div>
                 </div>
             </div>
         </div>

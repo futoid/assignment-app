@@ -18,7 +18,7 @@ const DoughNutChart = () => {
         ],
       };
     return (
-        <div>
+        <div className=" h-28 w-28 lg:h-52 lg:w-52">
             <Doughnut 
                 data={data}
                 options={{

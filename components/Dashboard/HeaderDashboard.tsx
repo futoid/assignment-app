@@ -1,12 +1,13 @@
 import Image from 'next/image'
 import { useSession } from 'next-auth/react';
-import { BiBell } from 'react-icons/bi';
+import { BiBell, BiLogOutCircle } from 'react-icons/bi';
 import SearchBar from '../reuseable-components/search';
 
 const DashboardHeader = () => {
     const { data: userData } = useSession();
+
     return (
-        <div className=" flex flex-row mt-14  gap-[43rem] items-center">
+        <div className=" flex mt-6 justify-between items-center">
             <div>
                 <h1 className=" text-black text-2xl font-bold">
                     Dashboard
@@ -28,6 +29,9 @@ const DashboardHeader = () => {
                         height={100}
                         loading='lazy'
                     />
+                </div>
+                <div >
+                    <BiLogOutCircle size={30} />
                 </div>
 
             </div>

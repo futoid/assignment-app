@@ -7,25 +7,25 @@ import UserCard from "./UserCard";
 
 const Dashboard = () => {
     return (
-        <div className=" grid grid-cols-9">
-            <div className=" col-span-2">
-                <SideBar />
-            </div>
-            <div>
-                <DashboardHeader />
-                <TopCardSection />
-                <BarSection />
-                <div className=" flex flex-row w-full grid-cols-2">
-                    <div className=" col-span-1">
-                        <ProductDataCard />
-                    </div>
-                    <div className=" col-span-1">
-                        <UserCard />
-                    </div>
+            <div className="lg:flex gap-8">
+                <div className=" fixed">
+                    <SideBar />
+                </div>
+                <div className=" px-10 lg:ml-[20rem] w-screen">
+                    <DashboardHeader />
+                    <TopCardSection />
+                    <BarSection />
+                    <div className="lg:grid lg:grid-cols-2 gap-6 mb-8">
+                        <div className=" lg:col-span-1" >
+                            <ProductDataCard />
+                        </div>
+                        <div className=" lg:col-span-1" >
+                            <UserCard />
+                        </div>
 
+                    </div>
                 </div>
             </div>
-        </div>
     );
 }
 
