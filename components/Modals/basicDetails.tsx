@@ -36,7 +36,7 @@ const BasicDetails = () => {
     }
 
     return ( 
-        <div className="flex fixed w-full h-full bg-black bg-opacity-50 items-center justify-center">
+        <div className="flex fixed w-full h-full bg-black bg-opacity-50 items-center justify-center z-20">
             <div className=" w-full lg:w-[35rem] h-fit bg-white rounded-2xl pb-5 m-5">
                 <div className=" flex flex-col border-b-[1px]">
                     <div className=" flex flex-row my-4 mx-4 font-montserrat text-lg font-semibold justify-between items-center">
