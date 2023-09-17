@@ -9,6 +9,9 @@ import {
     Legend,
 } from 'chart.js';
 import { FaCircle } from "react-icons/fa";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { ClipLoader } from "react-spinners";
 const BarSection = () => {
     ChartJS.register(
         CategoryScale,
@@ -18,24 +21,23 @@ const BarSection = () => {
         Tooltip,
         Legend
     );
-    const data = {
-        labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
-        datasets: [{
-            label: 'User',
-            data: [30, 24, 27, 21],
-            backgroundColor: [
-                '#98D89E',
-            ],
-        },
-        {
-            label: 'Guest',
-            data: [15, 20, 25, 40],
-            backgroundColor: [
-                '#EE8484',
-            ],
+
+    const [data, setData] = useState(null);
+
+    useEffect(() => {
+        try {
+            axios.get("/api/data")
+                .then(
+                    (res) => {
+                        setData(res.data);
+                    }
+                )
         }
-        ]
-    };
+        catch (error) {
+            console.log(error);
+        }
+    })
+
 
     return (
         <div className="mt-8">
@@ -55,35 +57,39 @@ const BarSection = () => {
                 </div>
                 <h1 className=" font-montserrat font-normal text-sm text-[#858585] mb-6">May - June 2021</h1>
                 <div className="  h-[10rem] lg:h-[16rem]">
-                    <Bar
-                        height={100}
-                        width={100}
-                        data={data}
-                        options={{
-                            maintainAspectRatio: false,
-                            responsive: true,
-                            scales: {
-                                x: {
-                                    grid: {
+                    {data ?
+                        <Bar
+                            height={100}
+                            width={100}
+                            data={data}
+                            options={{
+                                maintainAspectRatio: false,
+                                responsive: true,
+                                scales: {
+                                    x: {
+                                        grid: {
+                                            display: false
+                                        }
+                                    },
+                                    y: {
+                                        beginAtZero: true,
+                                        ticks: {
+                                            stepSize: 10,
+                                        },
+                                    },
+                                },
+                                plugins: {
+                                    legend: {
                                         display: false
                                     }
                                 },
-                                y: {
-                                    beginAtZero: true,
-                                    ticks: {
-                                        stepSize: 10,
-                                    },
-                                },
-                            },
-                            plugins: {
-                                legend: {
-                                    display: false
-                                }
-                            },
-
-
-                        }}
-                    />
+                            }}
+                        />
+                        :
+                        <div className=" h-full flex justify-center">
+                            <ClipLoader size={20} color="blue"/>
+                        </div>
+                    }
                 </div>
             </div>
         </div>
